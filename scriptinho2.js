@@ -33,9 +33,13 @@ function mostrarCarrito(carrito) {
         console.log("El carrito está vacío.");
     } else {
         console.log("Carrito de compras:");
+        let total = 0;
         carrito.forEach(item => {
-            console.log(`${item.nombre} - Cantidad: ${item.cantidad} - Precio Total: $${item.precio * item.cantidad}`);
+            let subtotal = item.precio * item.cantidad;
+            console.log(`${item.nombre} - Cantidad: ${item.cantidad} - Precio Total: $${subtotal}`);
+            total += subtotal;
         });
+        console.log(`Total del carrito: $${total}`);
     }
 }
 
